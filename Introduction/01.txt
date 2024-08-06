@@ -1,0 +1,91 @@
+naked return functions
+
+if the return type is known u don have to return anything, just return and go will handle evth
+example
+
+func main(x,y int) (sub int, add int) {
+    temp :=x + y
+    add := x - y
+    return
+}
+
+multiple variable declaration => example
+
+var (
+    name string = "Kidus"
+    age int     = 16
+    .....and others here 
+)
+
+values which are not given an explicit initial value are initialized with some default values
+
+example
+
+var (
+    isStupid bool
+    name string
+    age int
+)
+
+fmt.printf("%v %v %v %v", isStupid, name,age) => wil give false, "" and 0
+
+type conversion in go requires explicit assignment
+
+example from int to float
+
+var name int32 = 33
+var another float32 = name => invalid operation ..... should have been => float32(name)
+
+const keyword to declare constants
+
+const Pi = 3.14 => example
+
+untyped constants take the value needed. see the example on the track pg 16
+and bitwise operations are exactly the same as any programming langauge
+
+switch case statements in go have the same short hand as the if conditionals
+
+switch x := runtime.GOOS; x {
+    case "something":
+        do something
+    case "other ting"
+        do something
+    default
+        do some other thing
+}
+
+notice that we don need any break statements in cases unlike other pls
+// a switch with an empty referential is considered as true
+
+example switch {
+    case time > 0:
+        do something
+    and more
+}
+
+notice switch didn take anything here
+
+defer function() ==> waits until a nearby function finishes. executed last for this case
+another_function()
+
+
+// now it is all about pointers
+
+& this denotes a pointer and we can dereference it using the * sign
+this is important in sliced and other referential dts
+
+structs u already know abt tbh
+type name struct {
+    x string
+    other int
+}
+
+assignment := name{
+    stringtyped, integers
+}
+
+modifying a slice of an array without copying the contents first, will affect the original array
+
+example => var ages = [4]int{22,33,44,19}
+var other []int = ages[0:3]
+ages[0] = 11 => this will affect the original array
