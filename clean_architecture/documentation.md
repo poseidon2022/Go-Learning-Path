@@ -22,4 +22,15 @@ crossing boundaries
 
 presenter == data formatter to be representible for the UI. controller => invoke necessary useCases and execute business logic
 
+instead of writing t everytime we invoke a tast, we can use asser.New(t) for that
+
+example:
+
+func TestSomething(t *testing.T) {
+    assert := assert.New(t)
+    assert.Equal(expected, actual, "result should be equal") //t would be passed here normally
+}
+
+
+
 
